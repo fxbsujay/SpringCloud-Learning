@@ -21,7 +21,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping
-    public Result<Integer> save(Payment payment) {
+    public Result<Integer> save(@RequestBody Payment payment) {
 
         int result = paymentService.save(payment);
         log.info("插入结果:{}",result);
