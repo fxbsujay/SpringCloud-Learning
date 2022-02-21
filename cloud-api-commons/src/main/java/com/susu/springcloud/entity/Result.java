@@ -21,6 +21,11 @@ public class Result<T>  {
 
     }
 
+    public Result(String msg,T data) {
+        this.setMsg(msg);
+        this.setData(data);
+    }
+
     public Result(T data) {
         this.setData(data);
     }

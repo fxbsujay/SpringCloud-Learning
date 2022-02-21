@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -13,13 +13,9 @@ spring:
 
 eureka:
   instance:
-    instance-id: payment8001
+    instance-id: payment8002
     # 放完路径显示ip
     prefer-ip-address: true
-    # Eureka 客户端向服务端发送心跳的时间间隔，单位为秒 默认为30
-    # lease-renewal-interval-in-seconds: 1
-    # Eureka 服务端收到最后一次心跳等待时间上限，默认为90秒，超时则剔除服务
-    # lease-expiration-duration-in-seconds: 2
   client:
     register-with-eureka: true
     fetch-registry: true

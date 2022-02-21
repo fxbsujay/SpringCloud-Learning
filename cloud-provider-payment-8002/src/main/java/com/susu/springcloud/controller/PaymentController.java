@@ -30,7 +30,6 @@ public class PaymentController {
     @Resource
     private DiscoveryClient discoveryClient;
 
-
     @PostMapping
     public Result<Integer> save(@RequestBody Payment payment) {
 

@@ -1,21 +1,19 @@
-package com.susu.springcloud;
+package com.susu.springlcould;
 
+import com.susu.springcloud.entity.Payment;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author sujay
- * @version 21:38 2022/2/19
+ * @version 19:55 2022/2/20
  */
 @SpringBootApplication
-@EnableEurekaClient
 @EnableDiscoveryClient
-public class PaymentMain8001 {
+public class PaymentMain8004 {
 
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8001.class,args);
+        SpringApplication.run(PaymentMain8004.class,args);
     }
-
 }
