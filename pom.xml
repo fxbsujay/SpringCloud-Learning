@@ -21,6 +21,7 @@
       <module>cloud-consumer-ribbon-order-80</module>
       <module>cloud-consumer-feign-order-80</module>
       <module>cloud-provider-hystrix-pryment-8001</module>
+      <module>cloud-consumer-feign-hystrix-order-80</module>
   </modules>
   <packaging>pom</packaging>
 

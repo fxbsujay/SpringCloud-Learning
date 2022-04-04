@@ -42,4 +42,11 @@ public class PaymentController {
         return new Result<>("查询成功，端口好号：" + serverPort,result);
     }
 
+    @GetMapping("/breaker/{id}")
+    public Result<String> paymentCircuitBreaker(@PathVariable("id") Long id) {
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("查询结果:{}",result);
+        return new Result<>(result);
+    }
+
 }

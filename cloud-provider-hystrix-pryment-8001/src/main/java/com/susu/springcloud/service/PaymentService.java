@@ -1,6 +1,7 @@
 package com.susu.springcloud.service;
 
 import com.susu.springcloud.entity.Payment;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @author sujay
@@ -21,4 +22,7 @@ public interface PaymentService {
      * @return Payment
      */
     public String error(Long id);
+
+
+    public String paymentCircuitBreaker(Long id);
 }
