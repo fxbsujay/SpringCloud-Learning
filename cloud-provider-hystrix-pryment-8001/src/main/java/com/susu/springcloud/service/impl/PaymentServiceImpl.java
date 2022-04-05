@@ -5,8 +5,6 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.susu.springcloud.service.PaymentService;
 import com.susu.springcloud.utils.StringUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import java.util.concurrent.TimeUnit;
 
 /**
