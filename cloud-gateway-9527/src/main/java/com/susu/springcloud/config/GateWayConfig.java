@@ -20,6 +20,7 @@ public class GateWayConfig {
         // http://localhost:9527/guonei -> https://news.baidu.com/guonei
         routes.route("path_route_susu",
                 r -> r.path("/guonei").uri("https://news.baidu.com/guonei")).build();
+
         return routes.build();
     }
 }
