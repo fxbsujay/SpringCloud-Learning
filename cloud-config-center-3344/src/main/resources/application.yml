@@ -1,0 +1,24 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com
+
+eureka:
+  instance:
+    instance-id: payment8001
+    # 放完路径显示ip
+    prefer-ip-address: true
+    # Eureka 客户端向服务端发送心跳的时间间隔，单位为秒 默认为30
+    # lease-renewal-interval-in-seconds: 1
+    # Eureka 服务端收到最后一次心跳等待时间上限，默认为90秒，超时则剔除服务
+    # lease-expiration-duration-in-seconds: 2
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
