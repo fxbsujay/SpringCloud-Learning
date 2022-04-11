@@ -8,14 +8,14 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/fxbsujay/Sujay-Config.git
+          uri: https://gitee.com/sujay/config.git
           # 搜索目录
           search-paths:
-            - Sujay-Config
-          username: fxbsujay@gmail.com
+            - config
+          username: 18254925545
           password: F521.wojiaofxb
       # 读取分支
-      label: main
+      label: master
 
 eureka:
   client:
