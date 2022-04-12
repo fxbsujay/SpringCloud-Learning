@@ -28,6 +28,8 @@
     <module>cloud-config-center-3344</module>
       <module>cloud-config-client-3355</module>
       <module>cloud-config-client-3366</module>
+      <module>cloud-stream-rabbitmq-provider-8801</module>
+      <module>cloud-stream-rabbitmq-consumer-8802</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -105,13 +107,6 @@
       </dependency>
 
       <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${junit.version}</version>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
         <version>${log4j.version}</version>
@@ -126,6 +121,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>2.6.3</version>
         <configuration>
           <fork>true</fork>
           <addResources>true</addResources>
