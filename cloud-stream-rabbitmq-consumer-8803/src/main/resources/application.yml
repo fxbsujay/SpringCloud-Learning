@@ -1,5 +1,5 @@
 server:
-  port: 8802
+  port: 8803
 
 spring:
   application:
@@ -25,8 +25,8 @@ spring:
           content-type: application/json # 设置消息类型，本次为json，文本则设置为 text/plain
           # 设置消息类型，本次为json，文本则设置为 text/plain
           default-binder: defaultRabbit
-          # 不同分组重复消费  同一分组只能消费一次
           group: fxb
+
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔
