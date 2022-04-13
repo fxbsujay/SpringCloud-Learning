@@ -70,5 +70,9 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    @GetMapping("zipkin")
+    public Result<String> zipkin() {
+        return new Result<>("查询成功，端口好号：" + serverPort);
+    }
 
 }

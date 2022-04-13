@@ -47,6 +47,11 @@ public class OrderController {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/" + id, Result.class);
     }
 
+    @GetMapping("payment/zipkin")
+    public Result<String> zipkin() {
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/zipkin", Result.class);
+    }
+
    /* @GetMapping("payment/info/{id}")
     public Result<Payment> info(@PathVariable("id") Long id) {
         loadBalancerClient.execute(PAYMENT_URL + "/payment/" + id, HttpMethod.GET,null,new ParameterizedTypeReference<Result<Payment>>(){})
