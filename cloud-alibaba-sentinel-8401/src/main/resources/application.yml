@@ -14,3 +14,16 @@ spring:
       transport:
         dashboard: localhost:8080
         port: 8719
+      datasource:
+        ds1:
+          nacos:
+            username: nacos
+            password: nacos
+            server-addr: localhost:8848
+            dataId: cloud-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+feign:
+  sentinel:
+    enabled: true
