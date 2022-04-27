@@ -21,7 +21,7 @@ public class OrderController {
 
     @Resource
     private OrderService service;
-
+    // http://localhost:2001/order/insert?userId=1&productId=1&count=10&money=100
     @GetMapping("insert")
     public Result<Boolean> insert(Order order) {
         service.insert(order);

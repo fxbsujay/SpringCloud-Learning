@@ -5,7 +5,9 @@ import com.susu.springcloud.entity.Order;
 import com.susu.springcloud.service.AccountService;
 import com.susu.springcloud.service.OrderService;
 import com.susu.springcloud.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,13 +24,14 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private OrderDao orderDao;
 
-    @Resource
+    @Autowired
     private StorageService storageService;
 
-    @Resource
+    @Autowired
     private AccountService accountService;
 
     @Override
+    @GlobalTransactional(name = "fsp_order_insert",rollbackFor = Exception.class)
     public void insert(Order order) {
 
         log.info("----------> 新建订单");

@@ -1,12 +1,13 @@
 package com.susu.springcloud.service;
 
 import com.susu.springcloud.entity.Result;
-import com.susu.springcloud.entity.Storage;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "seata-storage-service")
+@Component
+@FeignClient(name = "seata-storage-service")
 public interface StorageService {
 
     @PostMapping("/storage/decrease")
