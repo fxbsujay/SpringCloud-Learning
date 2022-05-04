@@ -4,11 +4,6 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-/**
- * @Author sujay
- * @Description 描述
- * @Date 17:42 2022/4/27
- */
 @Data
 public class Account {
 

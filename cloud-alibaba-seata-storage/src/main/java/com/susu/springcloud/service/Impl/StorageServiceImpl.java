@@ -6,11 +6,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-/**
- * @Author sujay
- * @Description 描述
- * @Date 18:45 2022/4/27
- */
 @Service
 public class StorageServiceImpl implements StorageService {
 

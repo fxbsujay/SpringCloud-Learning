@@ -4,11 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @Author sujay
- * @Description 描述
- * @Date 13:38 2022/2/20
- */
 @Configuration
 public class ApplicationContextConfig {
 

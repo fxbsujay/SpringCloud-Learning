@@ -1,8 +1,5 @@
 package com.susu.springcloud.service;
 
-import com.susu.springcloud.entity.Payment;
-import org.springframework.web.bind.annotation.PathVariable;
-
 /**
  * @author sujay
  * @version 22:23 2022/2/19

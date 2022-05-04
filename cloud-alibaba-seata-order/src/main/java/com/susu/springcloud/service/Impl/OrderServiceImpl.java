@@ -12,11 +12,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-/**
- * @Author sujay
- * @Description 描述
- * @Date 16:20 2022/4/27
- */
 @Service
 @Slf4j
 public class OrderServiceImpl implements OrderService {

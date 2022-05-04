@@ -2,11 +2,6 @@ package com.susu.springcloud.common;
 
 import java.time.ZonedDateTime;
 
-/**
- * @Author sujay
- * @Description 描述
- * @Date 15:54 2022/4/9
- */
 public class DateUtils {
 
     public static void main(String[] args) {

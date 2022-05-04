@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-/**
- * @Author sujay
- * @Description 描述
- * @Date 16:58 2022/4/27
- */
 @RestController
 @RequestMapping("order")
 public class OrderController {

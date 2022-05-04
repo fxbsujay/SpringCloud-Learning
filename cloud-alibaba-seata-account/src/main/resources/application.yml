@@ -1,6 +1,10 @@
 server:
   port: 2002
 
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.susu.springcloud.entitys
+
 spring:
   main:
     allow-circular-references: true
@@ -8,18 +12,8 @@ spring:
     name: seata-account-service
   cloud:
     nacos:
-        discovery:
-          server-addr: localhost:8848
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/seata_account?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
-
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.susu.springcloud.entitys
+      discovery:
+        server-addr: localhost:8848
 
 seata:
   #事务群组（可以每个应用独立取名，也可以使用相同的名字），要与服务端nacos-config.txt中service.vgroup_mapping中存在,并且要保证多个群组情况下后缀名要保持一致-tx_group

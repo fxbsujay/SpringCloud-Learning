@@ -9,9 +9,8 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @Author sujay
- * @Description 描述
- * @Date 17:20 2022/3/25
+ * @author sujay
+ * @version 17:20 2022/3/25
  */
 @SpringBootApplication
 @EnableEurekaClient

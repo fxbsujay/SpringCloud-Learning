@@ -5,11 +5,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
 
-/**
- * @Author sujay
- * @Description 描述
- * @Date 15:57 2022/4/27
- */
 @Mapper
 public interface AccountDao {
 

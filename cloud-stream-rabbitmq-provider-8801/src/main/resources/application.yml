@@ -23,7 +23,6 @@ spring:
         studyExchange-out-0:
           destination: studyExchange # 表示要使用的Exchange名称定义
           content-type: application/json # 设置消息类型，本次为json，文本则设置为 text/plain
-          # 设置消息类型，本次为json，文本则设置为 text/plain
           default-binder: defaultRabbit
 
 eureka:
