@@ -1,6 +1,6 @@
 server:
   port: 8801
-#######################  公共表，每个库都有的表，并且数据相同
+#######################  读写分离
 spring:
   shardingsphere:
     datasource:
