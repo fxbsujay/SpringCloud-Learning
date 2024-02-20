@@ -1,0 +1,8 @@
+server:
+  port: 9990
+
+spring:
+  application:
+    name: elasticsearch
+  elasticsearch:
+    uris: 127.0.0.1:9200

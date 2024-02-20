@@ -1,0 +1,33 @@
+server:
+  port: 9988
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启注册中心动态创建路由，利用微服务名称进行路由
+      routes:
+        - id: baidu_routh   # 路由id
+          # uri: ws://localhost:8001 http://localhost:8001 lb://服务名称
+          uri: https://baidu.com # 转发的地址 可以为注册中心服务名称
+          predicates: # 断言 https://docs.spring.io/spring-cloud-gateway/docs/3.1.8/reference/html/#gateway-request-predicates-factories
+            #- Path=/api/**  # 断言，路径相匹配的进行路由
+            #- After=2022-04-09T15:55:09.281+08:00[Asia/Shanghai]  # 这个时间之后的 ZonedDateTime time = ZonedDateTime.now();
+            #- Before=2022-04-09T16:55:09.281+08:00[Asia/Shanghai] # 这个时间之前的
+            #- BetWeen=2022-04-09T15:55:09.281+08:00[Asia/Shanghai],2022-04-09T16:55:09.281+08:00[Asia/Shanghai] # 这个时间之间的
+            #- Host=**.baidu.com,baidu.com # 请求地址
+            #- Cookie=username,admin # 请求必须携带cookie    cmd curl http://localhost:9527/payment/31 --cookie "username=admin"
+            #- Header=X-Request-Id, \d+ # 请求头需要有 X-Request-Id 属性并且值为证书的正则表达式  cmd curl http://localhost:9527/payment/31 -H "X-Request-Id:123"
+            - Method=GET # 请求方式
+            #- Query=username, \d+ # 请求路径要有参数名为username的参数，并且值为整数
+          filters: # 过滤器 https://docs.spring.io/spring-cloud-gateway/docs/3.1.8/reference/html/#the-addrequestparameter-gatewayfilter-factory
+            - AddRequestParameter=red, blue
+
