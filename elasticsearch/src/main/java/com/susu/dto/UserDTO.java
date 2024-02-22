@@ -11,6 +11,6 @@ public class UserDTO {
     @Id
     private String id;
 
-    @Field(type = FieldType.Text, analyzer = "data")
+    @Field(type = FieldType.Text)
     private String data;
 }
