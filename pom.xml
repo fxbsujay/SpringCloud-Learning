@@ -19,6 +19,7 @@
 		<module>gateway</module>
         <module>seata</module>
 		<module>elasticsearch</module>
+		<module>shardingsphere</module>
 	</modules>
 	<packaging>pom</packaging>
 

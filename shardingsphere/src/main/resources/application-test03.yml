@@ -1,0 +1,47 @@
+server:
+  port: 8801
+#######################  公共表，每个库都有的表，并且数据相同
+spring:
+  shardingsphere:
+    datasource:
+      names: m1,m2
+      m1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+      m2:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+    sharding:
+      tables:
+        # 公共表
+        broadcast-tables: t_conf
+        t_conf:
+          key-generator:
+            # 分布式序列列名称
+            column: conf_id
+            # 分布式序列算法名称 雪花算法
+            type: SNOWFLAKE
+        t_user:
+          # 指定数据库的分布情况
+          actual-data-nodes: m$->{0}.t_user
+          # 分布式序列策略配置
+          key-generator:
+            # 分布式序列列名称
+            column: user_id
+            # 分布式序列算法名称 雪花算法
+            type: SNOWFLAKE
+          # 指定分片策略 cid为偶数则到course_1种，奇数则course_2
+          table-strategy:
+            inline:
+              sharding-column: user_id
+              algorithm-expression: t_user
+    props:
+      sql:
+        show: true
+

@@ -1,0 +1,33 @@
+server:
+  port: 9990
+
+spring:
+  shardingsphere:
+    datasource:
+      names: m1
+      m1: # 数据库
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://rm-bp1uhk8d56815utb22o.mysql.rds.aliyuncs.com:3306/cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: F521@wojiaofxb
+    sharding:
+      tables:
+        order:  #
+          # m1.order_1
+          actual-data-nodes: m1.order_$->{1..2}
+          # 分布式序列策略配置
+          key-generator:
+            # 分布式序列列名称
+            column: id
+            # 分布式序列算法名称 雪花算法
+            type: SNOWFLAKE
+          # 指定分片策略 id为偶数则到order_1种，奇数则order_2
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: order_$->{id % 2 +1}
+    props:
+      # 打开sql输出日志
+      sql:
+        show: true
