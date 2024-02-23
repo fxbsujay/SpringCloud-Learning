@@ -20,7 +20,8 @@
         <module>seata</module>
 		<module>elasticsearch</module>
 		<module>shardingsphere</module>
-	</modules>
+        <module>sentinel</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<properties>

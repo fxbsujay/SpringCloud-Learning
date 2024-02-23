@@ -1,0 +1,27 @@
+server:
+  port: 9990
+
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: sentinel
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      datasource:
+        ds1:
+          nacos:
+            username: nacos
+            password: nacos
+            server-addr: localhost:8848
+            dataId: cloud-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
